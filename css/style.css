@@ -6,7 +6,21 @@ body{
 	font-size:150%;
 }
 
-/*Make the h1 heading bigger with a bold font*/
+.skip, .skip:hover{
+	color: #000;
+	/* padding: 2px; */
+	position: absolute;
+	top: -100px;
+	color: red;
+	overflow: hidden;
+}
+
+.skip:active, .skip:focus{
+	position: static;
+	width: auto;
+	height: auto;
+}
+
 h1{
 	font-size: 2em; 
 	font-weight: bold;
@@ -16,46 +30,41 @@ h1{
 .active{
 	background: white;
     text-transform: uppercase;
-	text-align: center;
+	text-align: start;
 }
 
 .active a{
 	text-decoration: none;;
 }
 
-/*Style the images*/
-img{
-    height: auto;
-    width: 200px;;
-    border: 2px solid black;
-    padding: 25px;
-    border-radius: 10px;
-    margin: 10px;
-}
 
-/*Make the h2 heading match h1*/
 h2{
 	font-size: 2em; 
 	font-weight: bold;
 }
 
-/*Improve the spacing for paragraphs AND headings*/
 p, h1, h2 {
     padding: 10px;
 }
 
-/*Add borders around the main components and some
-space too*/
+
 header, nav, main, h1, footer{
-	border: solid black;
-	margin: 10px 0;
+	/* border: solid black; */
+	margin: 10px;
 }
 
+footer{
+	border: solid black;
+	color: black;
+	background-color: #af3131f1;
+}
+div{
+	padding: 10px;
+}
 
-/*Change the styling for all of the list 
-items in the nav section*/
 nav li{
 	background-color: #af3131f1;
+	color: red;
 	padding:10px;
 	width:25%;
 	border:1px solid black;
@@ -63,8 +72,29 @@ nav li{
 	width: 20%;
 }
 
+nav li a{
+	color: black;
+}
+img{
+    /* height: auto; */
+    width: 300px;
+	height: 300px;
+	object-fit: contain;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
 
+img:hover{
+	filter: grayscale();
+	border: dashed red;
+}
 
-/*Added this so the links stay the same color*/
-a:visited{color:black}
+p a:focus{
+	color:black;
+}
+p a:visited{
+	color:lightblue}
+
 
