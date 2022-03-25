@@ -19,7 +19,6 @@ body{
     background-size: cover;
 	background-position: center;
     /* display: block; */
-    /* Other styles here */
 }
 
 .skip, .skip:hover{
@@ -49,12 +48,14 @@ h1{
 	background-image: url('../images/icon.svg');
 	/* background: white; */
     text-transform: uppercase;
+	font-weight: bold;
 	text-align: start;
 	background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
 	
 }
+
 
 .active a{
 	text-decoration: none;;
@@ -98,19 +99,27 @@ nav li{
 nav li a{
 	color: black;
 }
+
+.navbar{
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	flex-direction: row;
+}
+
 img{
     /* height: auto; */
     width: 300px;
 	height: 300px;
-	object-fit: contain;
-    border: 2px solid black;
+	object-fit: cover;
+    border: 2px solid white;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px;
 }
 
 img:hover{
-	filter: grayscale();
+	filter: red;
 	border: dashed red;
 }
 
@@ -152,7 +161,7 @@ p a:visited{
 	gap: 10px;
 	padding: 10px;
 }
-
+ 
 @keyframes redtitle{
 	from{
 		color: white;
@@ -163,7 +172,7 @@ p a:visited{
 		color: red;
 		font-size: xx-small;
 		margin-left:0%;
-	}
+	} 
 
 }
 
@@ -171,4 +180,20 @@ p a:visited{
 	h1{
 		animation: none;
 	}
+}
+
+.container{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 10px;
+	justify-content: center;
+}
+
+.container p{
+max-width: 100%;
+align-self: center;
+}
+
+#summary{
+	max-width: 50%;
 }
