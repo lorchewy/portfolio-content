@@ -3,7 +3,23 @@ Make the font larger too.*/
 body{
 	margin:1%;
 	padding:1%;
-	font-size:150%;
+	font-size:100%;
+	background-image: url('../images/background.jpg');
+	background-repeat: no-repeat;
+    background-size: cover;
+	background-position: center;
+	background-color: #000;
+	color: white;
+	font-family: 'Oswald', sans-serif;
+}
+
+.icon {
+    background-image: url('../images/icon2.jpg');
+	background-repeat: no-repeat;
+    background-size: cover;
+	background-position: center;
+    /* display: block; */
+    /* Other styles here */
 }
 
 .skip, .skip:hover{
@@ -24,13 +40,20 @@ body{
 h1{
 	font-size: 2em; 
 	font-weight: bold;
+	animation: redtitle 3s ease-in-out infinite;
+	animation-direction: reverse;
 }
 
 
 .active{
-	background: white;
+	background-image: url('../images/icon.svg');
+	/* background: white; */
     text-transform: uppercase;
 	text-align: start;
+	background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+	
 }
 
 .active a{
@@ -91,10 +114,61 @@ img:hover{
 	border: dashed red;
 }
 
+p a{
+	color: lightblue
+}
+
+.material-icons{
+	color: white;
+}
+
 p a:focus{
 	color:black;
 }
 p a:visited{
-	color:lightblue}
+	color:gray}
 
+.thankyou {
+		grid-area: ty;
+	}
+.form {
+		grid-area: fr;
+	}
+.photos {
+		grid-area: ph;
+	}
+.ps {
+		grid-area: ps;
+	}
 
+.contentwrapper{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+	'ty ty'
+	'fr fr'
+	'ph ph'
+	'ps ps';
+	gap: 10px;
+	padding: 10px;
+}
+
+@keyframes redtitle{
+	from{
+		color: white;
+		font-size: xx-large;
+		margin-left:100%;
+	}
+	to{
+		color: red;
+		font-size: xx-small;
+		margin-left:0%;
+	}
+
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+	h1{
+		animation: none;
+	}
+}
