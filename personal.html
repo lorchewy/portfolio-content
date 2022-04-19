@@ -24,9 +24,10 @@
 </head>
 
 <body>
+	<a class="skip" alt="Skip to content" href="#main">Skip to Content</a>
 	<header>
 	  <nav>
-		<ul>
+		<ul class="navbar">
 			<li><a href = "index.html">About</a></li>
 			<li><a href = "bleach.html">Bleach</a></li>
 			<li><a href = "naruto.html">Naruto</a></li>
@@ -35,36 +36,34 @@
 	  </nav>
 	  <h1>Contact</h1>
 	</header>
-
 	
-	<main>
-		<div class="contentwrapper">
-			<div class="thankyou">Hello and thanks for visiting!
-				My name is Chewy Lor, and this is my first webpage.
+	<main id="main">
+		<div>
+			<div class="note">Hello and thank you for visiting.
+				My name is Chewy, and this is my first webpage.
 				This website is created with html and css.
 				This is purely for comedy purposes (plus my grade).
 				Bleach and Naruto were two of my favorite shows as a teenager.
 				I do not watch much anime anymore, but I still love the villians from these two shows.
-				This project combines two of my favorite things: music and bad guys. </div>
-			<div class="form">
-				<form action="messagepage" id="contactform">
-					<label for="fullname">Name</label><br>
-					<input type="text" id="fullname" name="fullname"><br>
-					<label for="email">Email</label><br>
-					<input type="text" id="email" name="email"><br>
-					<label for="message">Message</label><br>
-					<textarea rows='10' cols='40' name="message" form="contactform">Leave a Message:</textarea><br>
-					<input type="submit" value="Send">
-				</form>
-			</div>
-			<div class="photos">
-				<img src="images/selfie.jpeg" alt="selfie of author, a young Asian man with short facial hair." width="25"/>
-			</div>
-			<div class="ps">
-				P.S. This is a joke. Please tell me, I am funny.
-				I put all my worth on my ability to entertain people. If you enjoy this website,
+				This project combines two of my favorite things: music and bad guys. If you enjoy this website,
 				and would like to recommend a song or villian, please do share.
-				I am always excited to talk about villians.
+				I am always excited to talk about bad guys. </div>
+			<form action="https://formspree.io/f/xrgjydbb" method="POST">
+				<label>Name:<input type="text" name="fullname"></label><br>
+				<label>Email:<input type="email" name="email"></label><br>
+				<label>Message:<textarea name="message"></textarea></label>
+				<button type="submit">Send</button>
+			</form>
+			<div class="flip-card">
+				<div class="flip-card-inner" tabindex="0" >
+				  <div class="flip-card-front">
+					<img src="images/selfie.jpeg" alt="selfie of author, a young Asian man with short facial hair." width="25"/>
+				</div>
+				  <div class="flip-card-back">
+					<h3>Please send help.</h3> 
+					<p>I need water!</p> 
+				  </div>
+				</div>
 			</div>
 		</div>
 	</main>

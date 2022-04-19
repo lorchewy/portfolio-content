@@ -1,25 +1,23 @@
-/*Add padding and margin to space out the page.
-Make the font larger too.*/
+*{
+	font-family: 'Oswald', sans-serif;
+
+}
 body{
-	margin:1%;
+	margin:2%;
 	padding:1%;
 	font-size:100%;
-	background-image: url('../images/background.jpg');
-	background-repeat: no-repeat;
-    background-size: cover;
-	background-position: center;
 	background-color: #000;
 	color: white;
-	font-family: 'Oswald', sans-serif;
 }
 
-.icon {
-    background-image: url('../images/icon2.jpg');
+.para{
+	background-image: url('../images/background.jpg');
+	background-size: contain;
 	background-repeat: no-repeat;
-    background-size: cover;
 	background-position: center;
-    /* display: block; */
-}
+	background-attachment: fixed;
+	min-height: 300px;
+} 
 
 .skip, .skip:hover{
 	color: #000;
@@ -37,18 +35,40 @@ body{
 }
 
 h1{
-	font-size: 2em; 
+	color: #af3131f1;
 	font-weight: bold;
-	animation: redtitle 3s ease-in-out infinite;
-	animation-direction: reverse;
+	font-size: 2.5em; 
 }
 
+h2{
+	animation: redtitle 5s ease-in-out;
+	animation-direction: reverse;
+	color: white;
+	font-weight: bold;
+	font-size: 1em; 
+
+}
+
+@keyframes redtitle{
+	from{
+		color: white;
+		font-size: xx-large;
+		margin-left:100%;
+	}
+	to{
+		color: red;
+		font-size: xx-small;
+		margin-left:0%;
+
+	} 
+
+}
 
 .active{
+	background: white;
 	background-image: url('../images/icon.svg');
-	/* background: white; */
     text-transform: uppercase;
-	font-weight: bold;
+	font-weight: bolder;
 	text-align: start;
 	background-position: right;
     background-size: contain;
@@ -56,24 +76,25 @@ h1{
 	
 }
 
+.icon {
+    background-image: url('../images/icon2.jpg');
+	background-repeat: no-repeat;
+    background-size: cover;
+	background-position: center;
+    /* display: block; */
+}
 
 .active a{
-	text-decoration: none;;
+	text-decoration: none;
 }
 
-
-h2{
-	font-size: 2em; 
-	font-weight: bold;
-}
 
 p, h1, h2 {
     padding: 10px;
 }
 
 
-header, nav, main, h1, footer{
-	/* border: solid black; */
+header, nav, main, footer{
 	margin: 10px;
 }
 
@@ -93,7 +114,6 @@ nav li{
 	width:25%;
 	border:1px solid black;
 	display: inline-block;
-	width: 20%;
 }
 
 nav li a{
@@ -107,20 +127,19 @@ nav li a{
 	flex-direction: row;
 }
 
-img{
-    /* height: auto; */
+main div img{
     width: 300px;
-	height: 300px;
+	min-height: 300px;
 	object-fit: cover;
-    border: 2px solid white;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 10px;
+    border: 3px solid red;
+	filter: grayscale(100%);
 }
 
-img:hover{
-	filter: red;
-	border: dashed red;
+main div img:hover, main div img:focus{
+	border: solid red;
+	filter: none;
+	transform: scale(1.15);
+	z-index: 1;
 }
 
 p a{
@@ -137,55 +156,64 @@ p a:focus{
 p a:visited{
 	color:gray}
 
-.thankyou {
-		grid-area: ty;
-	}
-.form {
-		grid-area: fr;
-	}
-.photos {
-		grid-area: ph;
-	}
-.ps {
-		grid-area: ps;
+	.flip-card:hover .flip-card-inner,
+	.flip-card:focus .flip-card-inner,
+	.flip-card:focus-within .flip-card-inner,
+	.flip-card:active .flip-card-inner,
+	.flip-card-click:focus .flip-card-inner,
+	.flip-card-click:active .flip-card-inner,
+	.flip-card-click.flipped .flip-card-inner {
+	  transform: rotateY(180deg);
 	}
 
-.contentwrapper{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-areas: 
-	'ty ty'
-	'fr fr'
-	'ph ph'
-	'ps ps';
-	gap: 10px;
-	padding: 10px;
-}
- 
-@keyframes redtitle{
-	from{
-		color: white;
-		font-size: xx-large;
-		margin-left:100%;
+.flip-card {
+	background-color: transparent;
+	width: 300px;
+	height: 300px;
 	}
-	to{
-		color: red;
-		font-size: xx-small;
-		margin-left:0%;
+	  
+.flip-card-inner {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	text-align: center;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+	}
+
+	.flip-card-front, .flip-card-back {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	}
+	  
+.flip-card-front img{
+	filter: none;
+	border: 3px solid white;
 	} 
-
-}
-
-@media screen and (prefers-reduced-motion: reduce){
-	h1{
-		animation: none;
+	  
+.flip-card-back, .flip-card-back:focus {
+	background-color: white;
+	color: Black;
+	transform: rotateY(180deg);
 	}
+
+
+
+
+.form, .note{
+	padding: 0ex;
+	margin: 0 0 10px 0;
 }
+
 
 .container{
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 10px;
+	width: 90%;
+	grid-template-columns: 1fr;
+	gap: 7px;
 	justify-content: center;
 }
 
@@ -195,5 +223,56 @@ align-self: center;
 }
 
 #summary{
-	max-width: 50%;
+max-width: 50%;
 }
+
+@media screen and (prefers-reduced-motion: reduce){
+	h2{
+		animation: none;
+	}
+	.flip-card:hover .flip-card-inner {
+		transform: none;
+		}
+	.para{
+		background-attachment: scroll;
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	/* body{
+		margin: 20%;
+
+	} */
+	
+	.container{
+		display: grid;
+		width: auto;
+		grid-template-columns: 1fr 1fr 20%;
+		gap: 10px;
+		justify-content: left;
+	}
+	
+	.container p{
+	max-width: 100%;
+	align-self: center;
+	}
+	
+  }
+
+@media only screen and (min-width: 1000px) {
+	.container{
+		display: grid;
+		/* width: 90%; */
+		grid-template-columns: 1fr 1fr 10% 1fr 1fr 10%;
+		/* grid-template-rows: auto; */
+		gap: 15px;
+		justify-content: left;
+	}
+	
+	.container p{
+	max-width: 100%;
+	align-self: center;
+	/* grid-column: 1/2; */
+	}
+
+  }
